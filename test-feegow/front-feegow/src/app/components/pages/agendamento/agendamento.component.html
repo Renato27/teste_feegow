@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <div class="row margem-topo">
+        <div class="col-md-3 primeiro">
+            <h2>Agendamento de Consultas</h2>
+        </div>
+        <div class="col-md-9 segundo">
+            <h2>Que especialidade você está procurando?</h2>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <select class="form-select" [(ngModel)]="especialidade_id" (change)="onItemSelect(especialidade_id)" aria-label="Default select example">
+                    <option *ngFor="let especialidade of specialties" [ngValue]="especialidade?.especialidade_id">{{especialidade?.nome}}</option>
+                  </select>
+                    <small>Especialidades</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="showProfessional">
+        <hr>
+        <h4>{{professional.length}} encontrados</h4>
+        <div class="row">
+            <div class="col-sm-3" style="margin-top: 15px;" *ngFor="let profissional of professional">
+                <div class="card card-tam">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="../../../../assets/image/foto-rosto.png" alt="desenho-animado">
+                            </div>
+                            <div class="col-md-9">
+                                <h5 class="card-title">Dr. {{profissional?.nome}}</h5>
+                                <p class="card-text">
+                                    <small>CRM {{profissional?.documento_conselho}}</small>
+                                </p>
+                                <button class="btn btn-primary btn-sm" (click)="agendamentoInsertService.showModalInsert(profissional?.profissional_id)">Agendar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<agendamento-create-modal (onSuccess)="agendamentoInsertService.onInsertSuccess($event)" (OnError)="agendamentoInsertService.onInsertError($event)" [profissional_id]="professionalId"></agendamento-create-modal>

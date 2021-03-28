@@ -1,0 +1,24 @@
+.primeiro {
+    text-align: center;
+    border-right: 1px solid gray;
+    font-family: 'Times New Roman', Times, serif;
+    color: #191970;
+}
+
+.segundo {
+    font-family: 'Times New Roman', Times, serif;
+    color: #191970;
+}
+
+.margem-topo {
+    margin-top: 80px;
+}
+
+img {
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+}
+
+
+/* https://dummyimage.com/300x300/000/fff */
