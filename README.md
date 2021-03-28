@@ -25,7 +25,7 @@ Teste para desenvolvedor Jr. back-end
 # Tecnologias usadas
 
 - PHP como linguagem backend utilizando o Laravel Framework.
-- JavaScript como linguagem frontend utilizando o Angular Framework integrado com o Bootstrap.
+- JavaScript e Typescript como linguagem frontend utilizando o Angular Framework integrado com o Bootstrap.
 - Banco MySql.
 
 # Arquivo .env
